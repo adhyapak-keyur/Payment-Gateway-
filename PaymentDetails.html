@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Payment Checkout Form</title>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css">
+	<link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+  <div class="wrapper">
+      <div class="payment">
+        <div class="payment-logo">
+          <p>p</p>
+        </div>
+
+
+        <h2>Payment Gateway</h2>
+        <div class="form">
+          <div class="card space icon-relative">
+            <label class="label">Enter Amount:</label>
+            <input type="number" class="input" required pattern="[0-9]*" onkeydown="checkLenght()" maxlength="15" id="amount" >
+            <i class="far fa-money-bill-alt"></i>
+          </div>
+          <div class="card space icon-relative">
+            <label class="label">Card Holder:</label>
+            <input type="text" class="input" required id="cardholdername">
+            <i class="fas fa-user"></i>
+          </div>
+          <div class="card space icon-relative">
+            <label class="label">Card number:</label>
+            <input type="text" class="input" required data-mask="0000 0000 0000 0000" id="cardnumber">
+            <i class="far fa-credit-card"></i>
+          </div>
+          <div class="card-grp space">
+            <div class="card-item icon-relative">
+              <label class="label">Expiry date:</label>
+              <input type="text" name="expiry-data" required class="input" data-mask="00/00" id="expirydate">
+              <i class="far fa-calendar-alt"></i>
+            </div>
+            <div class="card-item icon-relative">
+              <label class="label">Security Code:</label>
+              <input type="text" class="input" data-mask="000" id="securitycode">
+              <i class="fas fa-lock"></i>
+            </div>
+          </div>
+
+          <div class="btn">
+            Pay
+          </div> 
+
+        </div>
+    </div>
+  </div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+<script>
+  function checkLenght(){
+    var amount = document.getElementById("amount").value;
+    var length = amount.length;
+    if(amount.length > 15)
+    {
+      alert("You have achieved Max Limit")
+    }
+  }
+</script>
+</body>
+</html>
